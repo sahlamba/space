@@ -1,4 +1,44 @@
 # Space
 Lightweight, free anonymous chat service. Gives you the private space you need.
 
-> Written using the MEAN framework and Socket.IO
+> Written using the [MEAN](http://mean.io/#!/) framework and [Socket.IO](http://socket.io/)  
+> Hosted on [Heroku](http://prispace.herokuapp.com/)
+
+## Setup local development environment
+### Setup local database
+Clone the repository
+```bash
+git clone https://github.com/thedrumsknight/space.git
+cd space
+```
+
+Setup MongoDB
+```bash
+[sudo] npm install mongoose
+```
+
+### Install dependencies
+The app uses [npm](https://www.npmjs.com/) and [bower](http://bower.io/) for dependency management  
+Run the following commands to install required dependencies
+
+```bash
+[sudo] npm install
+bower install
+```
+
+### Start server
+To start the __development__ server, run the following command which compiles [sass](http://sass-lang.com/) and uses [nodemon](http://nodemon.io/) to run the server  
+
+The app is continuously monitored by nodemon for any changes in the code upon which the server is automatically restarted
+```bash
+npm start
+```
+
+
+To start the __production__ server, run the following command which compiles [sass](http://sass-lang.com/) and runs a normal node server
+```bash
+npm build
+```
+
+## Credits
+>Developed and maintained by [Sahil Lamba](https://github.com/thedrumsknight), [Aman Shrivastava](https://github.com/amanthedorkknight) and [Mihir Rana](https://github.com/thedespicableknight)
