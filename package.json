@@ -1,0 +1,35 @@
+{
+  "name": "space",
+  "version": "1.0.0",
+  "description": "Lightweight, anonymous chat service using MEAN and Socket.IO",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.5.1",
+    "body-parser": "^1.4.3",
+    "mongoose": "^3.8.34",
+    "method-override": "^2.0.2"
+  },
+  "devDependencies": {
+    "bower": "^1.4.1",
+    "node-sass": "^3.2.0",
+    "nodemon": "^1.3.8"
+  },
+  "scripts": {
+    "build-css": "./compile-sass.sh",
+    "watch-server": "nodemon server.js",
+    "watch-sass": "nodemon -e sass -x \"npm run build-css\"",
+    "watch": "npm run watch-server & npm run watch-sass",
+    "start": "NODE_ENV=development npm run watch",
+    "build": "npm run build-css & node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thedrumsknight/space.git"
+  },
+  "author": "Sahil Lamba, Aman Shrivastava and Mihir Rana",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thedrumsknight/space/issues"
+  },
+  "homepage": "https://github.com/thedrumsknight/space#readme"
+}
