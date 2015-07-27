@@ -15,7 +15,7 @@ var db = require('./config/db');
 var port = process.env.PORT || 8000;
 
 // connect to our mongoDB database
-mongoose.connect(db.url);
+require('mongoose').connect(db.url);
 
 // get all data/stuff of the body (POST) parameters
 // parse application/json
@@ -38,7 +38,7 @@ app.use(methodOverride('X-HTTP-Method-Override'));
 app.use(express.static(__dirname + '/public'));
 
 // routes ==================================================
-require('./app/routes')(app); // configure our routes
+app.use('/', require('./app/routes')); // configure our routes
 
 // start app ===============================================
 // startup our app at http://localhost:8080

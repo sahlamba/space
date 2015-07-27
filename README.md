@@ -32,16 +32,18 @@ bower install
 ```
 
 ### Start server
-To start the __development__ server, run the following command which compiles [sass](http://sass-lang.com/) and uses [nodemon](http://nodemon.io/) to run the server  
+To start the __development__ server, run the following commands which compile [sass](http://sass-lang.com/) and use [nodemon](http://nodemon.io/) to run the server  
 
 The app is continuously monitored by nodemon for any changes in the code upon which the server is automatically restarted
 ```bash
+[sudo] mongod
 npm start
 ```
 
 
 To start the __production__ server, run the following command which compiles [sass](http://sass-lang.com/) and runs a normal node server
 ```bash
+[sudo] mongod
 npm build
 ```
 
