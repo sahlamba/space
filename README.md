@@ -6,16 +6,21 @@ Lightweight, free anonymous chat service. Gives you the private space you need.
 
 ## Setup local development environment
 ### Setup local database
-Clone the repository
+#### Clone the repository
 ```bash
 git clone https://github.com/thedrumsknight/space.git
 cd space
 ```
 
-Setup MongoDB
+#### Setup MongoDB
+To setup a local Mongo database, you will need to install the MongoDB CLI, visit [this](http://docs.mongodb.org/manual/installation/) page to install the client depending on your OS.  
+
+Start the `mongod` service and run the following command
 ```bash
-[sudo] npm install mongoose
+mongoimport --db space --collection messages --file db/messages.json
 ```
+
+This will setup a local Mongo database `space` with some sample data to work with.
 
 ### Install dependencies
 The app uses [npm](https://www.npmjs.com/) and [bower](http://bower.io/) for dependency management  
