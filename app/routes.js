@@ -7,8 +7,9 @@ router.use(function timeLog(req, res, next) {
   next();
 });
 // define the home page route
-router.get('/', function (req, res) {
-  res.json({name: 'Space'});
+router.get('*', function (req, res) {
+  // Send index for all requests, leave routing to angular
+  res.sendfile('../public/views/index.html');
 });
 
 module.exports = router;

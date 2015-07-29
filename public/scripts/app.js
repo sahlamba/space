@@ -1,3 +1,4 @@
-/* use strict */
+// app.js
+'use strict';
 
-angular.module('space', ['ui.router']);
+var app = angular.module('space', ['ui.router']);

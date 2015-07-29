@@ -41,8 +41,19 @@ app.use(express.static(__dirname + '/public'));
 app.use('/', require('./app/routes')); // configure our routes
 
 // start app ===============================================
-// startup our app at http://localhost:8080
-app.listen(port);
+// startup our app at http://localhost:8080 and configure socket.io
+var server = app.listen(port);
+var io = require('socket.io').listen(server);
+
+io.sockets.on('connection', function (socket) {
+  // Import message model
+  var Message = require('./app/models/message.js');
+  console.log('A user connected');
+
+  socket.on('disconnect', function (data) {
+    console.log('A user disconnected');
+  });
+});
 
 // shoutout to the user
 console.log('Magic happens on port ' + port);
