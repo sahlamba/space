@@ -4,6 +4,7 @@
   "description": "Lightweight, anonymous chat service using MEAN and Socket.IO",
   "main": "server.js",
   "dependencies": {
+    "node-sass": "^3.2.0",
     "body-parser": "^1.4.3",
     "express": "^4.5.1",
     "method-override": "^2.0.2",
@@ -12,12 +13,10 @@
   },
   "devDependencies": {
     "bower": "^1.4.1",
-    "node-sass": "^3.2.0",
     "nodemon": "^1.3.8"
   },
   "scripts": {
-    "postinstall": "bower install",
-    "preinstall": "npm run build-css",
+    "postinstall": "npm run build-css & bower install",
     "build-css": "./compile-sass.sh",
     "watch-server": "nodemon server.js",
     "watch-sass": "nodemon -e sass -x \"npm run build-css\"",
